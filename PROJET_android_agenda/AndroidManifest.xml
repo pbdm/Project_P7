@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="projet.agenda"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".Menu"
+                  android:label="@string/app_name">
+              <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Ajouter"
+                  android:label="@string/add">     
+        </activity>
+        <activity android:name=".AjouterLieu"
+                  android:label="AjouterLieu">     
+        </activity>
+        
+        <receiver android:name="Receiver">  
+            
+        </receiver>  
+        
+        <activity android:name=".Rechercher"
+                  android:label="Recherhcer">     
+        </activity>
+        
+        <activity android:name=".Modifier"
+                  android:label="Modifier">  
+        </activity>     
+                 
+        <activity android:name=".ModifierPersonne"
+                  android:label="ModifierPesronne">     
+        </activity> 
+        
+        <activity android:name=".ModifierLieu"
+                  android:label="ModifierLieu">     
+        </activity> 
+        
+        
+        <activity android:name=".AjouterPersonne"
+                  android:label="AjouterPesronne">     
+        </activity>
+        
+		<provider android:name=".Pourvoyeur"
+            android:authorities="projet.agenda.Pourvoyeur" 
+        /> 
+    </application>
+    <uses-sdk android:minSdkVersion="3" />
+	<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+</manifest> 

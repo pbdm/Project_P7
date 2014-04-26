@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutLieu"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<TextView  
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="@string/place"/>
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Nom"/>
+	<EditText
+		android:id="@+id/eNomLieu" 
+		android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Type"/>
+	<Spinner
+		android:id="@+id/sTypeLieu"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Address"/>
+	<EditText
+		android:id="@+id/eAddressLieu" 
+		android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Telephone"/>
+	<EditText
+		android:id="@+id/eTelephoneLieu" 
+		android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+	<Button  
+		android:id ="@+id/bAjouterLieu"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="@string/add"/>
+       
+</LinearLayout>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root><Class Name="personne" Package="package1"><Attribute Name="name" Type="String" Valeur="&quot;peng&quot;" /><Attribute Name="id" Type="Int" Valeur="1" /><Operation Name="setId" Type="void"><Parametre Type="Int" Nom="i" /><Parametre Type="String" Nom="j" /></Operation><Operation Name="getId" Type="int"><Parametre Type="Int" Nom="i" /><Parametre Type="String" Nom="j" /></Operation></Class><Class Name="personne2" Package="package1"><Attribute Name="name" Type="String" Valeur="&quot;peng&quot;" /></Class></root>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/3" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/3" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/1">
+	<declarations>
+		<Operator kind="node" name="Batterie_Auto">
+			<pragmas>
+				<ed:Operator oid="!ed/28ac/6CE5/908/4edcd6df411c" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/3">
+					<diagrams>
+						<NetDiagram name="diagram_Batterie_Auto_1" landscape="true" format="A4 (210 297)" oid="!ed/28ad/6CE5/908/4edcd6df7e1"/>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutPersonne"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<TextView  
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="@string/person"/>
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Nom"/>
+	<EditText
+		android:id="@+id/eNomPersonne" 
+		android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Type"/>
+	<Spinner
+		android:id="@+id/sTypePersonne" 
+		android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Telephone"/>
+	<EditText
+		android:id="@+id/eTelephonePersonne" 
+		android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+	<Button  
+		android:id ="@+id/bAjouterPersonne"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="@string/add"/>
+
+       
+</LinearLayout>

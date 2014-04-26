@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<ScrollView 
+		android:id="@+id/scrollView" 
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent" 
+		android:scrollbarStyle="outsideOverlay" 
+		android:background="@android:drawable/edit_text"> 
+ 		
+ 		<TableLayout
+		 	android:orientation="vertical"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content">
+		    <TextView  
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="@string/hello"/>
+			<Button  
+				android:id ="@+id/bDelect"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="Delect All"/>
+			<Button  
+				android:id="@+id/bModifier"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:text="Modifier"/>	
+		 	<TableRow>
+		 	
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="type"/>
+				<Spinner
+					android:id="@+id/sType"
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" />
+		
+		    </TableRow>   
+		   
+			<TextView  
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="evenment"/>
+			<EditText
+				android:id="@+id/eEvenment" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" />
+		     
+			<TextView  
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+			    android:text="lieu"/>
+			<Button
+				android:id="@+id/bLieuN" 
+			    android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"	
+			    android:text="lieu nouveau" />
+			<Button
+				android:id="@+id/bLieuA" 
+			    android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"
+			    android:text="lieu ancien" /> />
+			<TextView  
+				android:id="@+id/tLieu"
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content"/>
+			<TextView  
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+			    android:text="personne"/>
+			<Button
+				android:id="@+id/bPersonneN" 
+			    android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"	
+			    android:text="personne nouveau" />
+			<Button
+				android:id="@+id/bPersonneA" 
+			    android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"
+			    android:text="personne ancien" /> />
+			<TextView  
+				android:id="@+id/tPersonne"
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content"/>
+		    
+		    <TableRow>
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="date"/>
+				<EditText
+				 	android:id="@+id/eDate" 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text=""/>
+				<Button
+					android:id="@+id/bDate" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:text="set date" />
+			</TableRow>   
+		    <TableRow>
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="heure_debut"/>
+				<EditText
+					android:id="@+id/eHeureD" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" />
+				 <Button
+					android:id="@+id/bHeureD" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:text="set heure_debut" />
+			</TableRow>   
+		    <TableRow>
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="heure_fin"/>
+				<EditText
+					android:id="@+id/eHeureF" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" />
+				<Button
+					android:id="@+id/bHeureF" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:text="set heure_fin" />
+		    </TableRow>  
+		    <TableRow>
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="alarme"/>
+				<Spinner
+					android:id="@+id/sAlarme"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" />
+				
+			</TableRow>  
+			<TableRow>
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="type_alarme"/>
+				<Spinner
+					android:id="@+id/sTAlarme"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" />
+		    </TableRow>   
+		    <TableRow>
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="priorite"/>
+				<Spinner
+					android:id="@+id/sPriorite"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" />
+		    </TableRow>   
+		    
+			<TextView  
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 	
+				android:text="remarque"/>
+			<EditText
+				android:id="@+id/eRemarque"	
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" />
+		        
+		    <Button  
+				android:id="@+id/bModifier"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:text="Modifier"/>	
+		</TableLayout>		
+	</ScrollView>
+	
+	
+       
+</LinearLayout>

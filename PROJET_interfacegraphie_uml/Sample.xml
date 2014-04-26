@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Package>  
+    <Class 
+    	 
+    	Name="ss" 
+    	
+    	>
+    	<Attribute
+    		
+    		Name="ss"
+    		Type="boolean,char,int,float"
+    		>
+    	</Attribute>
+    	<Operation
+    		
+    		Name=""
+    		Type="boolean,char,int,float,void"
+    		Parmeters=""
+    		>
+    	</Operation>
+     
+    </Class>  
+    <Association
+    		
+    		Name=""
+    		RoleA=""
+    		RoleB=""
+    		Type=""
+    		Documentation=""
+    		>
+    </Association>
+</Package>   

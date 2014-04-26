@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<ScrollView 
+		android:id="@+id/scrollView" 
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent" 
+		android:scrollbarStyle="outsideOverlay" 
+		android:background="@android:drawable/edit_text"> 
+ 		<LinearLayout
+ 			android:id="@+id/layout"
+		 	android:orientation="vertical"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content">
+		 	<RelativeLayout
+		 		android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+		 	
+				<TextView  
+					android:id="@+id/tType"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" 
+				    android:text="Type"
+				    />
+				    
+				<Spinner
+					android:id="@+id/sType"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:layout_toRightOf="@id/tType" />
+		
+		    </RelativeLayout>   
+		   
+			<TextView  
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="Evenment"/>
+			<EditText
+				android:id="@+id/eEvenment" 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" />
+		     
+			<TextView  
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+			    android:text="Lieu"/>
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+				
+				<Button
+					android:id="@+id/bLieuN" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"	
+				    android:text="lieu nouveau" 
+				    />
+				<Button
+					android:id="@+id/bLieuA" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:text="lieu ancien"
+				    android:layout_toRightOf="@id/bLieuN" /> 
+				<TextView  
+					android:id="@+id/tLieu"
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content"
+				    android:layout_toRightOf="@id/bLieuA"
+				    />
+			</RelativeLayout>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+				<TextView  
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content" 
+				    android:text="Personne"/>
+				<Button
+					android:id="@+id/bNouveauPersonne" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"	
+				    android:text="Ajouter une personne" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/lPersonne"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:orientation="vertical">
+		    </LinearLayout>
+		    <LinearLayout
+		    	android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:orientation="horizontal">
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="Date"/>
+				<EditText
+				 	android:id="@+id/eDate" 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content"
+				    android:enabled="false"
+				    />
+				<Button
+					android:id="@+id/bDate" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:text="Set date"
+				     />
+			</LinearLayout>   
+		    <LinearLayout
+		    	android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="Heure_debut"/>
+				<EditText
+					android:id="@+id/eHeureD" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" 
+				    android:enabled="false"/>
+				 <Button
+					android:id="@+id/bHeureD" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:text="Set Heure_debut" />
+			</LinearLayout>   
+		    <LinearLayout
+		    	android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="Heure_fin  "/>
+				<EditText
+					android:id="@+id/eHeureF" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" 
+				    android:enabled="false"/>
+				<Button
+					android:id="@+id/bHeureF" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:text="Set Heure_fin" />
+		    </LinearLayout>  
+		    <LinearLayout
+		    	android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="Alarme"/>
+				<Spinner
+					android:id="@+id/sAlarme"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" />
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="heures avant"/>
+				
+			</LinearLayout>  
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="Type_alarme"/>
+				<Spinner
+					android:id="@+id/sTAlarme"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" />
+		    </LinearLayout>   
+		    <LinearLayout
+		    	android:layout_width="wrap_content"
+				android:layout_height="fill_parent" >
+				<TextView  
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content" 
+				    android:text="Priorite"/>
+				<Spinner
+					android:id="@+id/sPriorite"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" />
+		    </LinearLayout>   
+		    
+			<TextView  
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 	
+				android:text="Remarque"/>
+			<EditText
+				android:id="@+id/eRemarque"	
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" />
+		    <Button  
+				android:id ="@+id/bEnvoyer"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="envoyer"/>   
+		    <Button  
+				android:id="@+id/bAjouter"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:text="@string/add"/>	
+				
+		</LinearLayout>		
+	</ScrollView>
+</LinearLayout>
+

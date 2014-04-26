@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<TextView  
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="@string/hello"/>
+	<Button  
+		android:id ="@+id/bAdd"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="Adjouter une evenment"/>
+	<Button  
+		android:id ="@+id/bRechercher"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="Modify/Recherche les evenments"/>	
+	<Button  
+		android:id="@+id/bGestionPersonne"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="Gestion du personne"/>
+	<Button  
+		android:id="@+id/bGestionLieu"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="Gestion du lieu"/>	
+	<Button  
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="@string/help"/>	
+	<Button  
+		android:id="@+id/bExit"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:text="@string/exit"/>	
+	
+</LinearLayout>

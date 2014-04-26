@@ -1,0 +1,9 @@
+$**************  SCADETOC Version 6.1.2 (build i9) **************
+** Generation date: 2011-12-07T18:06:45
+** Command: scade -code "C:\Documents and Settings\bopeng35\Bureau\Projet\Projet.etp" -node Batterie -conf Simulation -build
+*************************************************************$
+*** Code Generator Error (CERROR): 'Code Generator' option in 'Code Generator/General' tab must be specified.
+$**************  SCADETOC Version 6.1.2 (build i9) **************
+** Generation date: 2011-12-07T18:06:47
+** sc2c.log
+*************************************************************$

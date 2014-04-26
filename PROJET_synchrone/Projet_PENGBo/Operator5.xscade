@@ -1,0 +1,2299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/3" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/3" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/1">
+	<declarations>
+		<Operator kind="node" name="Couteau_thermique_Auto">
+			<inputs>
+				<Variable name="power1">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/2054/6CE5/908/4edcbd79207a"/>
+					</pragmas>
+				</Variable>
+				<Variable name="power2">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/205a/6CE5/908/4edcbd794b91"/>
+					</pragmas>
+				</Variable>
+			</inputs>
+			<outputs>
+				<Variable name="cut">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/2060/6CE5/908/4edcbd79142c"/>
+					</pragmas>
+				</Variable>
+				<Variable name="error">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/2067/6CE5/908/4edcbd793f56"/>
+					</pragmas>
+				</Variable>
+			</outputs>
+			<data>
+				<StateMachine name="SM1">
+					<states>
+						<State initial="true" name="no_cut">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/20ab/6CE5/908/4edcbdcc2492"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- cut = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="cut"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/209b/6CE5/908/4edcbdc65fc4"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = false; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="false"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/20aa/6CE5/908/4edcbdcc1725"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="cut1"/>
+									</target>
+									<condition>
+										<!-- power1 or power2 -->
+										<NAryOp name="39" operator="or">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="power1"/>
+													</path>
+												</IdExpression>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="power2"/>
+													</path>
+												</IdExpression>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/26f1/6CE5/908/4edccfca5746"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2046/6CE5/908/4edcbd6720e8"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/2034/6CE5/908/4edcbd50730b"/>
+							</pragmas>
+						</State>
+						<State name="cut1">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/20be/6CE5/908/4edcbdd25c27"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- cut = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="cut"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/20a1/6CE5/908/4edcbdc87ee"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = false; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="false"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/20bd/6CE5/908/4edcbdd23963"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="cut2"/>
+									</target>
+									<condition>
+										<!-- power1 or power2 -->
+										<NAryOp name="41" operator="or">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="power1"/>
+													</path>
+												</IdExpression>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="power2"/>
+													</path>
+												</IdExpression>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2715/6CE5/908/4edccfd56926"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2137/6CE5/908/4edcbed6279a"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="no_cut"/>
+									</target>
+									<condition>
+										<!--  not (power1 or power2) -->
+										<UnaryOp name="25" operator="not">
+											<operand>
+												<!-- (power1 or power2) -->
+												<NAryOp name="40" operator="or">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operand>
+										</UnaryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2703/6CE5/908/4edccfd07003"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/216c/6CE5/908/4edcbf1a6f2b"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/203b/6CE5/908/4edcbd5248bf"/>
+							</pragmas>
+						</State>
+						<State name="cut2">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/214c/6CE5/908/4edcbee77f80"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- cut = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="cut"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/2140/6CE5/908/4edcbee31d42"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = true; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="true"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/214b/6CE5/908/4edcbee72472"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<pragmas>
+								<ed:State oid="!ed/2122/6CE5/908/4edcbeb97546"/>
+							</pragmas>
+						</State>
+					</states>
+					<pragmas>
+						<ed:StateMachine oid="!ed/2026/6CE5/908/4edcbd4a6262"/>
+					</pragmas>
+				</StateMachine>
+				<StateMachine name="SM2">
+					<states>
+						<State initial="true" name="no_error">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/20d4/6CE5/908/4edcbdd73afe"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- error = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="error"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/208f/6CE5/908/4edcbdc33ed5"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = false; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="false"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/20d3/6CE5/908/4edcbdd74d0d"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="State8"/>
+									</target>
+									<condition>
+										<!-- power1 and power2 or cut and (power1 xor power2) -->
+										<NAryOp name="49" operator="or">
+											<operands>
+												<!-- power1 and power2 -->
+												<NAryOp name="45" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+												<!-- cut and (power1 xor power2) -->
+												<NAryOp name="46" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+														<!-- (power1 xor power2) -->
+														<NAryOp name="21" operator="xor">
+															<operands>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power1"/>
+																	</path>
+																</IdExpression>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power2"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</NAryOp>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2806/6CE5/908/4edcd06f7f1a"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/25ba/6CE5/908/4edccd1e5df7"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="error1"/>
+									</target>
+									<condition>
+										<!--  not cut and (power1 xor power2) -->
+										<NAryOp name="36" operator="and">
+											<operands>
+												<!--  not cut -->
+												<UnaryOp name="26" operator="not">
+													<operand>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+													</operand>
+												</UnaryOp>
+												<!-- (power1 xor power2) -->
+												<NAryOp name="14" operator="xor">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2729/6CE5/908/4edccfda3496"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/20fa/6CE5/908/4edcbde75e71"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/2080/6CE5/908/4edcbdb26b96"/>
+							</pragmas>
+						</State>
+						<State name="error1">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/20e8/6CE5/908/4edcbde02ac3"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- error = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="error"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/2095/6CE5/908/4edcbdc43abe"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = false; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="false"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/20e7/6CE5/908/4edcbde04677"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="State9"/>
+									</target>
+									<condition>
+										<!-- power1 and power2 or cut and (power1 xor power2) -->
+										<NAryOp name="43" operator="or">
+											<operands>
+												<!-- power1 and power2 -->
+												<NAryOp name="39" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+												<!-- cut and (power1 xor power2) -->
+												<NAryOp name="40" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+														<!-- (power1 xor power2) -->
+														<NAryOp name="17" operator="xor">
+															<operands>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power1"/>
+																	</path>
+																</IdExpression>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power2"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</NAryOp>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2776/6CE5/908/4edcd03a6a3d"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2632/6CE5/908/4edcce95a02"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="error2"/>
+									</target>
+									<condition>
+										<!--  not cut and (power1 xor power2) -->
+										<NAryOp name="37" operator="and">
+											<operands>
+												<!--  not cut -->
+												<UnaryOp name="28" operator="not">
+													<operand>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+													</operand>
+												</UnaryOp>
+												<!-- (power1 xor power2) -->
+												<NAryOp name="15" operator="xor">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2752/6CE5/908/4edcd0272521"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/21e1/6CE5/908/4edcbfa03079"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="no_error"/>
+									</target>
+									<condition>
+										<!--  not (power1 or power2) -->
+										<UnaryOp name="27" operator="not">
+											<operand>
+												<!-- (power1 or power2) -->
+												<NAryOp name="42" operator="or">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operand>
+										</UnaryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2740/6CE5/908/4edcd0225219"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2584/6CE5/908/4edccc727a8"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/2087/6CE5/908/4edcbdb4367"/>
+							</pragmas>
+						</State>
+						<State name="error2">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/21d0/6CE5/908/4edcbf936b21"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- error = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="error"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/21be/6CE5/908/4edcbf86704b"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = false; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="false"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/21cf/6CE5/908/4edcbf93818"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="State10"/>
+									</target>
+									<condition>
+										<!-- power1 and power2 or cut and (power1 xor power2) -->
+										<NAryOp name="45" operator="or">
+											<operands>
+												<!-- power1 and power2 -->
+												<NAryOp name="42" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+												<!-- cut and (power1 xor power2) -->
+												<NAryOp name="43" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+														<!-- (power1 xor power2) -->
+														<NAryOp name="19" operator="xor">
+															<operands>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power1"/>
+																	</path>
+																</IdExpression>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power2"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</NAryOp>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/27ac/6CE5/908/4edcd04f1071"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/264c/6CE5/908/4edccebf4594"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="error3"/>
+									</target>
+									<condition>
+										<!--  not cut and (power1 xor power2) -->
+										<NAryOp name="41" operator="and">
+											<operands>
+												<!--  not cut -->
+												<UnaryOp name="31" operator="not">
+													<operand>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+													</operand>
+												</UnaryOp>
+												<!-- (power1 xor power2) -->
+												<NAryOp name="18" operator="xor">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/279a/6CE5/908/4edcd0486cc0"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/225d/6CE5/908/4edcc027472f"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="no_error"/>
+									</target>
+									<condition>
+										<!--  not (power1 or power2) -->
+										<UnaryOp name="30" operator="not">
+											<operand>
+												<!-- (power1 or power2) -->
+												<NAryOp name="44" operator="or">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operand>
+										</UnaryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2788/6CE5/908/4edcd0425c17"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2590/6CE5/908/4edccc836199"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/2181/6CE5/908/4edcbf442949"/>
+							</pragmas>
+						</State>
+						<State name="error3">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/221e/6CE5/908/4edcbfce4433"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- error = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="error"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/220d/6CE5/908/4edcbfca596a"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = false; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="false"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/221d/6CE5/908/4edcbfce28f5"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="no_error"/>
+									</target>
+									<condition>
+										<!--  not (power1 or power2) -->
+										<UnaryOp name="33" operator="not">
+											<operand>
+												<!-- (power1 or power2) -->
+												<NAryOp name="48" operator="or">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operand>
+										</UnaryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/27f4/6CE5/908/4edcd0682fd5"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/25a0/6CE5/908/4edccc973b4c"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="State11"/>
+									</target>
+									<condition>
+										<!-- power1 or power2 -->
+										<NAryOp name="46" operator="or">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="power1"/>
+													</path>
+												</IdExpression>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="power2"/>
+													</path>
+												</IdExpression>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/27d0/6CE5/908/4edcd05e2f6"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2566/6CE5/908/4edccc5a20ab"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/218c/6CE5/908/4edcbf4d4edf"/>
+							</pragmas>
+						</State>
+						<State name="State8">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/2699/6CE5/908/4edccf3b7041"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- error = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="error"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/267b/6CE5/908/4edccf326490"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = true; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="true"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/2698/6CE5/908/4edccf3b2414"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="State9"/>
+									</target>
+									<condition>
+										<!-- power1 and power2 or cut and (power1 xor power2) -->
+										<NAryOp name="51" operator="or">
+											<operands>
+												<!-- power1 and power2 -->
+												<NAryOp name="47" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+												<!-- cut and (power1 xor power2) -->
+												<NAryOp name="48" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+														<!-- (power1 xor power2) -->
+														<NAryOp name="22" operator="xor">
+															<operands>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power1"/>
+																	</path>
+																</IdExpression>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power2"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</NAryOp>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/282b/6CE5/908/4edcd07d7d77"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/25dc/6CE5/908/4edccd871ac1"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="no_error"/>
+									</target>
+									<condition>
+										<!--  not (power1 or power2) -->
+										<UnaryOp name="34" operator="not">
+											<operand>
+												<!-- (power1 or power2) -->
+												<NAryOp name="50" operator="or">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operand>
+										</UnaryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2818/6CE5/908/4edcd07716a0"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2609/6CE5/908/4edccdfa5c2c"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="error2"/>
+									</target>
+									<condition>
+										<!--  not cut and (power1 xor power2) -->
+										<NAryOp name="38" operator="and">
+											<operands>
+												<!--  not cut -->
+												<UnaryOp name="29" operator="not">
+													<operand>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+													</operand>
+												</UnaryOp>
+												<!-- (power1 xor power2) -->
+												<NAryOp name="16" operator="xor">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2764/6CE5/908/4edcd0332a0b"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/263b/6CE5/908/4edcceaa7113"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/2482/6CE5/908/4edcc5ef2801"/>
+							</pragmas>
+						</State>
+						<State name="State9">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/26ac/6CE5/908/4edccf4061f5"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- error = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="error"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/2681/6CE5/908/4edccf3345a3"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = true; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="true"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/26ab/6CE5/908/4edccf401fd3"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="State10"/>
+									</target>
+									<condition>
+										<!-- power1 and power2 or cut and (power1 xor power2) -->
+										<NAryOp name="53" operator="or">
+											<operands>
+												<!-- power1 and power2 -->
+												<NAryOp name="49" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+												<!-- cut and (power1 xor power2) -->
+												<NAryOp name="50" operator="and">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+														<!-- (power1 xor power2) -->
+														<NAryOp name="23" operator="xor">
+															<operands>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power1"/>
+																	</path>
+																</IdExpression>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="power2"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</NAryOp>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/284f/6CE5/908/4edcd08b5149"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/25e7/6CE5/908/4edccda041ae"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="no_error"/>
+									</target>
+									<condition>
+										<!--  not (power1 or power2) -->
+										<UnaryOp name="35" operator="not">
+											<operand>
+												<!-- (power1 or power2) -->
+												<NAryOp name="52" operator="or">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operand>
+										</UnaryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/283d/6CE5/908/4edcd0852292"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2615/6CE5/908/4edcce0641a0"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="error3"/>
+									</target>
+									<condition>
+										<!--  not cut and (power1 xor power2) -->
+										<NAryOp name="44" operator="and">
+											<operands>
+												<!--  not cut -->
+												<UnaryOp name="32" operator="not">
+													<operand>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="cut"/>
+															</path>
+														</IdExpression>
+													</operand>
+												</UnaryOp>
+												<!-- (power1 xor power2) -->
+												<NAryOp name="20" operator="xor">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/27be/6CE5/908/4edcd0573eae"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2655/6CE5/908/4edcced06acc"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/249a/6CE5/908/4edcc93a350b"/>
+							</pragmas>
+						</State>
+						<State name="State10">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/26c0/6CE5/908/4edccf4656df"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- error = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="error"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/2689/6CE5/908/4edccf357704"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = true; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="true"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/26bf/6CE5/908/4edccf46697"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<until>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="no_error"/>
+									</target>
+									<condition>
+										<!--  not (power1 or power2) -->
+										<UnaryOp name="36" operator="not">
+											<operand>
+												<!-- (power1 or power2) -->
+												<NAryOp name="54" operator="or">
+													<operands>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power1"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="power2"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</NAryOp>
+											</operand>
+										</UnaryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/2861/6CE5/908/4edcd0923500"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/2627/6CE5/908/4edcce2f58bb"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="State11"/>
+									</target>
+									<condition>
+										<!-- power1 or power2 -->
+										<NAryOp name="47" operator="or">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="power1"/>
+													</path>
+												</IdExpression>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="power2"/>
+													</path>
+												</IdExpression>
+											</operands>
+										</NAryOp>
+									</condition>
+									<effect>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/27e2/6CE5/908/4edcd063752b"/>
+											</pragmas>
+										</Action>
+									</effect>
+									<pragmas>
+										<ed:Transition oid="!ed/25f1/6CE5/908/4edccdad1fa2"/>
+									</pragmas>
+								</Transition>
+							</until>
+							<pragmas>
+								<ed:State oid="!ed/24a1/6CE5/908/4edcc93b4d3d"/>
+							</pragmas>
+						</State>
+						<State name="State11">
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/26d3/6CE5/908/4edccf4b69f9"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- error = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="error"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/268f/6CE5/908/4edccf385c1b"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = true; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<ConstValue value="true"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/26d2/6CE5/908/4edccf4b4b6f"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<pragmas>
+								<ed:State oid="!ed/24a8/6CE5/908/4edcc93d51b3"/>
+							</pragmas>
+						</State>
+					</states>
+					<pragmas>
+						<ed:StateMachine oid="!ed/202d/6CE5/908/4edcbd4c28a5"/>
+					</pragmas>
+				</StateMachine>
+			</data>
+			<pragmas>
+				<ed:Operator oid="!ed/1fff/659F/810/4edcbafb6571" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/3">
+					<diagrams>
+						<NetDiagram name="diagram_Couteau_thermique_Auto_1" landscape="true" format="A4 (210 297)" oid="!ed/2000/659F/810/4edcbafb6a0b">
+							<presentationElements>
+								<StateMachineGE presentable="!ed/2026/6CE5/908/4edcbd4a6262">
+									<position>
+										<Point x="3995" y="582"/>
+									</position>
+									<size>
+										<Size width="21379" height="7356"/>
+									</size>
+								</StateMachineGE>
+								<StateMachineGE presentable="!ed/202d/6CE5/908/4edcbd4c28a5">
+									<position>
+										<Point x="2884" y="8599"/>
+									</position>
+									<size>
+										<Size width="33549" height="26326"/>
+									</size>
+								</StateMachineGE>
+								<StateGE presentable="!ed/2034/6CE5/908/4edcbd50730b">
+									<position>
+										<Point x="4895" y="2593"/>
+									</position>
+									<size>
+										<Size width="3016" height="2752"/>
+									</size>
+								</StateGE>
+								<StateGE presentable="!ed/203b/6CE5/908/4edcbd5248bf">
+									<position>
+										<Point x="12621" y="2566"/>
+									</position>
+									<size>
+										<Size width="2910" height="3281"/>
+									</size>
+								</StateGE>
+								<TransitionGE presentable="!ed/2046/6CE5/908/4edcbd6720e8">
+									<positions>
+										<Point x="7911" y="3201"/>
+										<Point x="9975" y="3069"/>
+										<Point x="10557" y="3387"/>
+										<Point x="12621" y="3201"/>
+									</positions>
+									<labelSize>
+										<Size width="3122" height="1270"/>
+									</labelSize>
+									<labelPos>
+										<Point x="9075" y="979"/>
+									</labelPos>
+									<slashPos>
+										<Point x="11404" y="979"/>
+									</slashPos>
+								</TransitionGE>
+								<StateGE presentable="!ed/2080/6CE5/908/4edcbdb26b96">
+									<position>
+										<Point x="4683" y="15108"/>
+									</position>
+									<size>
+										<Size width="2672" height="3916"/>
+									</size>
+								</StateGE>
+								<StateGE presentable="!ed/2087/6CE5/908/4edcbdb4367">
+									<position>
+										<Point x="12197" y="15214"/>
+									</position>
+									<size>
+										<Size width="2805" height="3360"/>
+									</size>
+								</StateGE>
+								<EquationGE presentable="!ed/208f/6CE5/908/4edcbdc33ed5">
+									<position>
+										<Point x="6112" y="17806"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/2095/6CE5/908/4edcbdc43abe">
+									<position>
+										<Point x="13891" y="16854"/>
+									</position>
+									<size>
+										<Size width="317" height="502"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/209b/6CE5/908/4edcbdc65fc4">
+									<position>
+										<Point x="6535" y="4022"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/20a1/6CE5/908/4edcbdc87ee">
+									<position>
+										<Point x="14367" y="4471"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/20aa/6CE5/908/4edcbdcc1725">
+									<position>
+										<Point x="5794" y="4180"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/20aa/6CE5/908/4edcbdcc1725" dstEquation="!ed/209b/6CE5/908/4edcbdc65fc4">
+									<positions>
+										<Point x="6006" y="4339"/>
+										<Point x="6297" y="4339"/>
+										<Point x="6297" y="4286"/>
+										<Point x="6588" y="4286"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/20bd/6CE5/908/4edcbdd23963">
+									<position>
+										<Point x="13441" y="4815"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/20bd/6CE5/908/4edcbdd23963" dstEquation="!ed/20a1/6CE5/908/4edcbdc87ee">
+									<positions>
+										<Point x="13653" y="4974"/>
+										<Point x="13811" y="4974"/>
+										<Point x="13811" y="4736"/>
+										<Point x="14420" y="4736"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/20d3/6CE5/908/4edcbdd74d0d">
+									<position>
+										<Point x="5424" y="17912"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/20d3/6CE5/908/4edcbdd74d0d" dstEquation="!ed/208f/6CE5/908/4edcbdc33ed5">
+									<positions>
+										<Point x="5636" y="18071"/>
+										<Point x="5900" y="18071"/>
+										<Point x="5900" y="18071"/>
+										<Point x="6165" y="18071"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/20e7/6CE5/908/4edcbde04677">
+									<position>
+										<Point x="12832" y="16933"/>
+									</position>
+									<size>
+										<Size width="211" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/20e7/6CE5/908/4edcbde04677" dstEquation="!ed/2095/6CE5/908/4edcbdc43abe">
+									<positions>
+										<Point x="13044" y="17092"/>
+										<Point x="13335" y="17092"/>
+										<Point x="13335" y="17092"/>
+										<Point x="13944" y="17092"/>
+									</positions>
+								</Edge>
+								<TransitionGE presentable="!ed/20fa/6CE5/908/4edcbde75e71">
+									<positions>
+										<Point x="7355" y="15928"/>
+										<Point x="9313" y="16007"/>
+										<Point x="10239" y="15981"/>
+										<Point x="12197" y="16060"/>
+									</positions>
+									<labelSize>
+										<Size width="4895" height="635"/>
+									</labelSize>
+									<labelPos>
+										<Point x="7487" y="14922"/>
+									</labelPos>
+									<slashPos>
+										<Point x="11589" y="14923"/>
+									</slashPos>
+								</TransitionGE>
+								<StateGE presentable="!ed/2122/6CE5/908/4edcbeb97546">
+									<position>
+										<Point x="19341" y="1905"/>
+									</position>
+									<size>
+										<Size width="3995" height="3916"/>
+									</size>
+								</StateGE>
+								<TransitionGE presentable="!ed/2137/6CE5/908/4edcbed6279a">
+									<positions>
+										<Point x="15531" y="3096"/>
+										<Point x="16166" y="3016"/>
+										<Point x="18706" y="2963"/>
+										<Point x="19341" y="2831"/>
+									</positions>
+									<labelSize>
+										<Size width="3043" height="1270"/>
+									</labelSize>
+									<labelPos>
+										<Point x="15690" y="1270"/>
+									</labelPos>
+									<slashPos>
+										<Point x="17939" y="1270"/>
+									</slashPos>
+								</TransitionGE>
+								<EquationGE presentable="!ed/2140/6CE5/908/4edcbee31d42">
+									<position>
+										<Point x="22304" y="4445"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/214b/6CE5/908/4edcbee72472">
+									<position>
+										<Point x="20902" y="4763"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/214b/6CE5/908/4edcbee72472" dstEquation="!ed/2140/6CE5/908/4edcbee31d42">
+									<positions>
+										<Point x="21114" y="4921"/>
+										<Point x="21722" y="4921"/>
+										<Point x="21722" y="4710"/>
+										<Point x="22357" y="4710"/>
+									</positions>
+								</Edge>
+								<TransitionGE presentable="!ed/216c/6CE5/908/4edcbf1a6f2b">
+									<positions>
+										<Point x="12621" y="4763"/>
+										<Point x="11060" y="4683"/>
+										<Point x="9499" y="4604"/>
+										<Point x="7911" y="4524"/>
+									</positions>
+									<labelSize>
+										<Size width="3545" height="635"/>
+									</labelSize>
+									<labelPos>
+										<Point x="8123" y="5265"/>
+									</labelPos>
+									<slashPos>
+										<Point x="10874" y="5265"/>
+									</slashPos>
+								</TransitionGE>
+								<StateGE presentable="!ed/2181/6CE5/908/4edcbf442949">
+									<position>
+										<Point x="17251" y="14817"/>
+									</position>
+									<size>
+										<Size width="2858" height="3784"/>
+									</size>
+								</StateGE>
+								<StateGE presentable="!ed/218c/6CE5/908/4edcbf4d4edf">
+									<position>
+										<Point x="23680" y="15610"/>
+									</position>
+									<size>
+										<Size width="2911" height="3545"/>
+									</size>
+								</StateGE>
+								<EquationGE presentable="!ed/21be/6CE5/908/4edcbf86704b">
+									<position>
+										<Point x="19103" y="17066"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/21cf/6CE5/908/4edcbf93818">
+									<position>
+										<Point x="18309" y="17224"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/21cf/6CE5/908/4edcbf93818" dstEquation="!ed/21be/6CE5/908/4edcbf86704b">
+									<positions>
+										<Point x="18521" y="17383"/>
+										<Point x="18838" y="17383"/>
+										<Point x="18838" y="17330"/>
+										<Point x="19156" y="17330"/>
+									</positions>
+								</Edge>
+								<TransitionGE presentable="!ed/21e1/6CE5/908/4edcbfa03079">
+									<positions>
+										<Point x="15002" y="16378"/>
+										<Point x="15610" y="16431"/>
+										<Point x="16616" y="16140"/>
+										<Point x="17251" y="16219"/>
+									</positions>
+									<labelSize>
+										<Size width="3254" height="635"/>
+									</labelSize>
+									<labelPos>
+										<Point x="14736" y="14182"/>
+									</labelPos>
+									<slashPos>
+										<Point x="17198" y="14182"/>
+									</slashPos>
+								</TransitionGE>
+								<EquationGE presentable="!ed/220d/6CE5/908/4edcbfca596a">
+									<position>
+										<Point x="25241" y="17939"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/221d/6CE5/908/4edcbfce28f5">
+									<position>
+										<Point x="24527" y="18124"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/221d/6CE5/908/4edcbfce28f5" dstEquation="!ed/220d/6CE5/908/4edcbfca596a">
+									<positions>
+										<Point x="24739" y="18283"/>
+										<Point x="25003" y="18283"/>
+										<Point x="25003" y="18203"/>
+										<Point x="25294" y="18203"/>
+									</positions>
+								</Edge>
+								<TransitionGE presentable="!ed/225d/6CE5/908/4edcc027472f">
+									<positions>
+										<Point x="20108" y="16219"/>
+										<Point x="21061" y="16166"/>
+										<Point x="22728" y="16986"/>
+										<Point x="23680" y="16880"/>
+									</positions>
+									<labelSize>
+										<Size width="3149" height="635"/>
+									</labelSize>
+									<labelPos>
+										<Point x="20240" y="14023"/>
+									</labelPos>
+									<slashPos>
+										<Point x="22595" y="14023"/>
+									</slashPos>
+								</TransitionGE>
+								<StateGE presentable="!ed/2482/6CE5/908/4edcc5ef2801">
+									<position>
+										<Point x="9737" y="22463"/>
+									</position>
+									<size>
+										<Size width="3122" height="3704"/>
+									</size>
+								</StateGE>
+								<StateGE presentable="!ed/249a/6CE5/908/4edcc93a350b">
+									<position>
+										<Point x="15928" y="22199"/>
+									</position>
+									<size>
+										<Size width="3281" height="3837"/>
+									</size>
+								</StateGE>
+								<StateGE presentable="!ed/24a1/6CE5/908/4edcc93b4d3d">
+									<position>
+										<Point x="22199" y="22093"/>
+									</position>
+									<size>
+										<Size width="3122" height="3704"/>
+									</size>
+								</StateGE>
+								<StateGE presentable="!ed/24a8/6CE5/908/4edcc93d51b3">
+									<position>
+										<Point x="29554" y="19156"/>
+									</position>
+									<size>
+										<Size width="2514" height="3175"/>
+									</size>
+								</StateGE>
+								<TransitionGE presentable="!ed/2566/6CE5/908/4edccc5a20ab">
+									<positions>
+										<Point x="26591" y="17357"/>
+										<Point x="26855" y="18203"/>
+										<Point x="29236" y="18971"/>
+										<Point x="29554" y="19870"/>
+									</positions>
+									<labelSize>
+										<Size width="2328" height="1270"/>
+									</labelSize>
+									<labelPos>
+										<Point x="27755" y="15743"/>
+									</labelPos>
+									<slashPos>
+										<Point x="29289" y="15743"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/2584/6CE5/908/4edccc727a8">
+									<positions>
+										<Point x="13388" y="15214"/>
+										<Point x="11456" y="12515"/>
+										<Point x="8625" y="13600"/>
+										<Point x="6324" y="15108"/>
+									</positions>
+									<labelSize>
+										<Size width="2725" height="1588"/>
+									</labelSize>
+									<labelPos>
+										<Point x="8069" y="11244"/>
+									</labelPos>
+									<slashPos>
+										<Point x="10001" y="11245"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/2590/6CE5/908/4edccc836199">
+									<positions>
+										<Point x="18362" y="14817"/>
+										<Point x="13309" y="11880"/>
+										<Point x="10160" y="13494"/>
+										<Point x="6985" y="15108"/>
+									</positions>
+									<labelSize>
+										<Size width="2884" height="1588"/>
+									</labelSize>
+									<labelPos>
+										<Point x="12330" y="12144"/>
+									</labelPos>
+									<slashPos>
+										<Point x="14420" y="12144"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/25a0/6CE5/908/4edccc973b4c">
+									<positions>
+										<Point x="25188" y="15610"/>
+										<Point x="15372" y="9340"/>
+										<Point x="10398" y="12224"/>
+										<Point x="5398" y="15108"/>
+									</positions>
+									<labelSize>
+										<Size width="4286" height="635"/>
+									</labelSize>
+									<labelPos>
+										<Point x="14552" y="9340"/>
+									</labelPos>
+									<slashPos>
+										<Point x="18045" y="9340"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/25ba/6CE5/908/4edccd1e5df7">
+									<positions>
+										<Point x="5874" y="19024"/>
+										<Point x="7144" y="20770"/>
+										<Point x="8414" y="22516"/>
+										<Point x="9737" y="24289"/>
+									</positions>
+									<labelSize>
+										<Size width="3704" height="953"/>
+									</labelSize>
+									<labelPos>
+										<Point x="7224" y="20109"/>
+									</labelPos>
+									<slashPos>
+										<Point x="10134" y="20108"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/25dc/6CE5/908/4edccd871ac1">
+									<positions>
+										<Point x="12859" y="24183"/>
+										<Point x="13864" y="24051"/>
+										<Point x="14870" y="23918"/>
+										<Point x="15928" y="23733"/>
+									</positions>
+									<labelSize>
+										<Size width="3810" height="953"/>
+									</labelSize>
+									<labelPos>
+										<Point x="12542" y="26458"/>
+									</labelPos>
+									<slashPos>
+										<Point x="15558" y="26458"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/25e7/6CE5/908/4edccda041ae">
+									<positions>
+										<Point x="19235" y="23865"/>
+										<Point x="20214" y="23813"/>
+										<Point x="21193" y="23760"/>
+										<Point x="22199" y="23654"/>
+									</positions>
+									<labelSize>
+										<Size width="3731" height="1588"/>
+									</labelSize>
+									<labelPos>
+										<Point x="19341" y="26379"/>
+									</labelPos>
+									<slashPos>
+										<Point x="22278" y="26379"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/25f1/6CE5/908/4edccdad1fa2">
+									<positions>
+										<Point x="25321" y="23707"/>
+										<Point x="26723" y="22886"/>
+										<Point x="28125" y="22066"/>
+										<Point x="29554" y="21193"/>
+									</positions>
+									<labelSize>
+										<Size width="3810" height="3493"/>
+									</labelSize>
+									<labelPos>
+										<Point x="28204" y="24262"/>
+									</labelPos>
+									<slashPos>
+										<Point x="31221" y="24262"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/2609/6CE5/908/4edccdfa5c2c">
+									<positions>
+										<Point x="9737" y="24686"/>
+										<Point x="8229" y="22807"/>
+										<Point x="6720" y="20929"/>
+										<Point x="5212" y="19024"/>
+									</positions>
+									<labelSize>
+										<Size width="2884" height="1588"/>
+									</labelSize>
+									<labelPos>
+										<Point x="5424" y="23284"/>
+									</labelPos>
+									<slashPos>
+										<Point x="7514" y="23283"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/2615/6CE5/908/4edcce0641a0">
+									<positions>
+										<Point x="17304" y="26035"/>
+										<Point x="14155" y="28496"/>
+										<Point x="4101" y="27384"/>
+										<Point x="4789" y="18971"/>
+									</positions>
+									<labelSize>
+										<Size width="2990" height="1588"/>
+									</labelSize>
+									<labelPos>
+										<Point x="5635" y="26300"/>
+									</labelPos>
+									<slashPos>
+										<Point x="7832" y="26300"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/2627/6CE5/908/4edcce2f58bb">
+									<positions>
+										<Point x="23548" y="25797"/>
+										<Point x="16140" y="32650"/>
+										<Point x="1005" y="30930"/>
+										<Point x="4789" y="18971"/>
+									</positions>
+									<labelSize>
+										<Size width="3598" height="1588"/>
+									</labelSize>
+									<labelPos>
+										<Point x="7329" y="29871"/>
+									</labelPos>
+									<slashPos>
+										<Point x="10134" y="29871"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/2632/6CE5/908/4edcce95a02">
+									<positions>
+										<Point x="14473" y="18574"/>
+										<Point x="15293" y="19764"/>
+										<Point x="16113" y="20955"/>
+										<Point x="16960" y="22199"/>
+									</positions>
+									<labelSize>
+										<Size width="3254" height="3493"/>
+									</labelSize>
+									<labelPos>
+										<Point x="16616" y="19843"/>
+									</labelPos>
+									<slashPos>
+										<Point x="19076" y="19844"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/263b/6CE5/908/4edcceaa7113">
+									<positions>
+										<Point x="12859" y="22913"/>
+										<Point x="14314" y="21246"/>
+										<Point x="15769" y="19579"/>
+										<Point x="17251" y="17912"/>
+									</positions>
+									<labelSize>
+										<Size width="1535" height="370"/>
+									</labelSize>
+									<labelPos>
+										<Point x="11906" y="19870"/>
+									</labelPos>
+									<slashPos>
+										<Point x="12647" y="19870"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/264c/6CE5/908/4edccebf4594">
+									<positions>
+										<Point x="20108" y="17515"/>
+										<Point x="21246" y="19024"/>
+										<Point x="22384" y="20532"/>
+										<Point x="23548" y="22093"/>
+									</positions>
+									<labelSize>
+										<Size width="3889" height="953"/>
+									</labelSize>
+									<labelPos>
+										<Point x="23681" y="20558"/>
+									</labelPos>
+									<slashPos>
+										<Point x="26776" y="20558"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/2655/6CE5/908/4edcced06acc">
+									<positions>
+										<Point x="19182" y="22304"/>
+										<Point x="20664" y="20955"/>
+										<Point x="22146" y="19606"/>
+										<Point x="23680" y="18203"/>
+									</positions>
+									<labelSize>
+										<Size width="2566" height="953"/>
+									</labelSize>
+									<labelPos>
+										<Point x="20876" y="17357"/>
+									</labelPos>
+									<slashPos>
+										<Point x="22648" y="17357"/>
+									</slashPos>
+								</TransitionGE>
+								<EquationGE presentable="!ed/267b/6CE5/908/4edccf326490">
+									<position>
+										<Point x="11377" y="24844"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/2681/6CE5/908/4edccf3345a3">
+									<position>
+										<Point x="17780" y="24791"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/2689/6CE5/908/4edccf357704">
+									<position>
+										<Point x="23760" y="24553"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/268f/6CE5/908/4edccf385c1b">
+									<position>
+										<Point x="30850" y="21299"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/2698/6CE5/908/4edccf3b2414">
+									<position>
+										<Point x="10927" y="24844"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/2698/6CE5/908/4edccf3b2414" dstEquation="!ed/267b/6CE5/908/4edccf326490">
+									<positions>
+										<Point x="11139" y="25003"/>
+										<Point x="11271" y="25003"/>
+										<Point x="11271" y="25109"/>
+										<Point x="11430" y="25109"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/26ab/6CE5/908/4edccf401fd3">
+									<position>
+										<Point x="17092" y="24844"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/26ab/6CE5/908/4edccf401fd3" dstEquation="!ed/2681/6CE5/908/4edccf3345a3">
+									<positions>
+										<Point x="17304" y="25003"/>
+										<Point x="17568" y="25003"/>
+										<Point x="17568" y="25056"/>
+										<Point x="17833" y="25056"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/26bf/6CE5/908/4edccf46697">
+									<position>
+										<Point x="23151" y="24606"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/26bf/6CE5/908/4edccf46697" dstEquation="!ed/2689/6CE5/908/4edccf357704">
+									<positions>
+										<Point x="23363" y="24765"/>
+										<Point x="23574" y="24765"/>
+										<Point x="23574" y="24818"/>
+										<Point x="23813" y="24818"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/26d2/6CE5/908/4edccf4b4b6f">
+									<position>
+										<Point x="30401" y="21246"/>
+									</position>
+									<size>
+										<Size width="211" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/26d2/6CE5/908/4edccf4b4b6f" dstEquation="!ed/268f/6CE5/908/4edccf385c1b">
+									<positions>
+										<Point x="30612" y="21405"/>
+										<Point x="30745" y="21405"/>
+										<Point x="30745" y="21564"/>
+										<Point x="30903" y="21564"/>
+									</positions>
+								</Edge>
+							</presentationElements>
+						</NetDiagram>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>
